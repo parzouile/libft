@@ -19,6 +19,14 @@
 
 # include <stdio.h>
 
+
+typedef struct s_list
+{
+	void	*content;
+	struct	s_list *next;
+}		t_list;
+
+
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
@@ -59,11 +67,7 @@ t_list	*ft_lstlast(t_list *lst);
 t_list	*ft_lstnew(void *content);
 
 
-typedef struct s_list
-{
-	void	*content;
-	struct	s_list *next;
-}		t_list;
+
 
 
 #endif
