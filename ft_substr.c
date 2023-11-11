@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aschmitt <aschmitt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/11 18:38:45 by aschmitt          #+#    #+#             */
-/*   Updated: 2023/08/11 18:38:45 by aschmitt         ###   ########.fr       */
+/*   Created: 2023/11/06 15:07:40 by aschmitt          #+#    #+#             */
+/*   Updated: 2023/11/11 14:13:37 by aschmitt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,11 @@
 
 size_t	ft_size(char const *s, unsigned int start, size_t len)
 {
-	size_t	a;
-
 	if (start >= ft_strlen(s))
 		return (0);
-	a = 0;
-	while (s[start] && a < len)
-	{
-		start ++;
-		a ++;
-	}
-	return (a);
+	if (len > ft_strlen(s + start))
+		len = ft_strlen(s + start);
+	return (len);
 }
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
@@ -37,7 +31,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (!str)
 		return (NULL);
 	i = 0;
-	while (s[start + i] && i < len)
+	while (i < len && s[start + i])
 	{
 		str[i] = s[start + i];
 		i ++;

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aschmitt <aschmitt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/07 20:53:32 by aschmitt          #+#    #+#             */
-/*   Updated: 2023/08/07 20:53:32 by aschmitt         ###   ########.fr       */
+/*   Created: 2023/11/06 14:45:07 by aschmitt          #+#    #+#             */
+/*   Updated: 2023/11/06 14:45:30 by aschmitt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,3 @@ int	ft_isalnum(int c)
 		return (1);
 	return (0);
 }
-
-/*#include <stdio.h>
-int main(int argc, char **argv)
-{
-	(void)argc;
-	printf("%d ", ft_isalnum(argv[1][0]));
-	return 0;
-}*/

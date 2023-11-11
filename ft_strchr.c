@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aschmitt <aschmitt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/10 01:17:03 by aschmitt          #+#    #+#             */
-/*   Updated: 2023/08/10 01:17:03 by aschmitt         ###   ########.fr       */
+/*   Created: 2023/11/06 14:59:23 by aschmitt          #+#    #+#             */
+/*   Updated: 2023/11/06 17:34:43 by aschmitt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,18 @@
 
 char	*ft_strchr(const char *str, int c)
 {
-	int	i;
+	int		i;
+	char	a;
 
+	a = (char)c;
 	i = 0;
 	while (str[i])
 	{
-		if (str[i] == c)
+		if (str[i] == a)
 			return ((char *)str + i);
 		i ++;
 	}
+	if (a == 0)
+		return ((char *)str + i);
 	return (NULL);
 }

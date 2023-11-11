@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aschmitt <aschmitt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/10 01:59:07 by aschmitt          #+#    #+#             */
-/*   Updated: 2023/08/10 01:59:07 by aschmitt         ###   ########.fr       */
+/*   Created: 2023/11/06 15:02:57 by aschmitt          #+#    #+#             */
+/*   Updated: 2023/11/07 23:53:45 by aschmitt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	memcmp(const void *p1, const void *p2, size_t size)
+int	ft_memcmp(const void *p1, const void *p2, size_t size)
 {
 	size_t	i;
 	char	*s1;
@@ -21,7 +21,9 @@ int	memcmp(const void *p1, const void *p2, size_t size)
 	s2 = (char *)p2;
 	s1 = (char *)p1;
 	i = 0;
-	while (s1[i] && s2[i] && s1[i] == s2[i] && (i + 1) < size)
+	if (size == 0)
+		return (0);
+	while (s1[i] == s2[i] && (i + 1) < size)
 		i ++;
-	return (s1[i] - s2[i]);
+	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aschmitt <aschmitt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/08 12:20:18 by aschmitt          #+#    #+#             */
-/*   Updated: 2023/08/08 12:20:18 by aschmitt         ###   ########.fr       */
+/*   Created: 2023/11/06 14:54:28 by aschmitt          #+#    #+#             */
+/*   Updated: 2023/11/11 14:03:25 by aschmitt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,15 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	const unsigned char	*s;
 	size_t				i;
 
-	i = 0;
+	i = -1;
 	d = dest;
 	s = src;
+	if (n == 0)
+		return (dest);
 	if (d < s)
 	{
-		while (i < n)
-		{
+		while (++i < n)
 			d[i] = s[i];
-			i ++;
-		}
 	}
 	else if (d > s)
 	{
@@ -37,6 +36,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 			d[i] = s[i];
 			i --;
 		}
+		d[0] = s[0];
 	}
 	return (dest);
 }

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aschmitt <aschmitt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/10 17:11:58 by aschmitt          #+#    #+#             */
-/*   Updated: 2023/08/10 17:11:58 by aschmitt         ###   ########.fr       */
+/*   Created: 2023/11/06 15:04:40 by aschmitt          #+#    #+#             */
+/*   Updated: 2023/11/07 14:20:38 by aschmitt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,17 @@ void	*ft_calloc(size_t elementCount, size_t elementSize)
 {
 	void	*result;
 	size_t	i;
+	size_t	size;
 
+	size = -1;
+	if (elementSize > 0 && elementCount > size / elementSize)
+		return (NULL);
 	i = 0;
-	result = malloc(elementCount * elementSize);
+	size = elementCount * elementSize;
+	result = malloc(size);
 	if (!result)
 		return (NULL);
-	while (i < elementCount)
+	while (i < (size))
 	{
 		((unsigned char *)result)[i] = 0;
 		i ++;

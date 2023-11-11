@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aschmitt <aschmitt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/07 20:48:08 by aschmitt          #+#    #+#             */
-/*   Updated: 2023/08/07 20:48:08 by aschmitt         ###   ########.fr       */
+/*   Created: 2023/11/06 14:44:20 by aschmitt          #+#    #+#             */
+/*   Updated: 2023/11/06 14:47:39 by aschmitt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int c)
+int	ft_isdigit(int c)
 {
 	if (c > 47 && c < 58)
 		return (1);
