@@ -6,13 +6,13 @@
 /*   By: aschmitt <aschmitt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 15:20:07 by aschmitt          #+#    #+#             */
-/*   Updated: 2023/11/07 14:21:02 by aschmitt         ###   ########.fr       */
+/*   Updated: 2023/11/14 17:38:59 by aschmitt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_recursive_putnbr(int nb, int fd)
+static void	ft_recursive_putnbr(int nb, int fd)
 {
 	if (nb / 10 == 0)
 		ft_putchar_fd('0' + nb % 10, fd);

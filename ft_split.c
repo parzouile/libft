@@ -6,14 +6,14 @@
 /*   By: aschmitt <aschmitt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 14:36:16 by aschmitt          #+#    #+#             */
-/*   Updated: 2023/11/11 14:46:11 by aschmitt         ###   ########.fr       */
+/*   Updated: 2023/11/14 17:39:28 by aschmitt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <stdio.h>
 
-char	*ft_line(char const *str, int a, int i)
+static char	*ft_line(char const *str, int a, int i)
 {
 	char	*line;
 	int		j;
@@ -26,11 +26,11 @@ char	*ft_line(char const *str, int a, int i)
 	{
 		line[j++] = str[a++];
 	}
-	line[j++] = 0;
+	line[j] = 0;
 	return (line);
 }
 
-int	nb_word(char const *s, char c)
+static int	nb_word(char const *s, char c)
 {
 	int	i;
 	int	a;
@@ -51,7 +51,7 @@ int	nb_word(char const *s, char c)
 	return (nb);
 }
 
-char	**ft_free(char **result, int n)
+static char	**ft_free(char **result, int n)
 {
 	while (n >= 0)
 	{
@@ -62,18 +62,13 @@ char	**ft_free(char **result, int n)
 	return (NULL);
 }
 
-char	**ft_split(char const *s, char c)
+static char	**ft_tab(char **result, char const *s, char c)
 {
-	int		i;
-	int		a;
-	int		i_tab;
-	char	**result;
+	int	i;
+	int	a;
+	int	i_tab;
 
-	result = malloc(sizeof(char *) * (nb_word(s, c) + 1));
-	if (!result)
-		return (NULL);
 	i_tab = 0;
-	result[0] = 0;
 	i = -1;
 	while (s[++i])
 	{
@@ -81,12 +76,28 @@ char	**ft_split(char const *s, char c)
 		while (s[i] && s[i] != c)
 			i ++;
 		if (i != a)
+		{
 			result[i_tab++] = ft_line(s, a, i);
-		if (!result[i_tab - 1])
-			return (ft_free(result, i_tab));
-		result[i_tab] = 0;
+			if (!result[i_tab - 1])
+				return (ft_free(result, i_tab - 1));
+			result[i_tab] = 0;
+		}
 		if (!s[i])
 			return (result);
 	}
+	return (result);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**result;
+
+	if (s == NULL)
+		return (NULL);
+	result = (char **) malloc(sizeof(char *) * (nb_word(s, c) + 1));
+	if (!result)
+		return (NULL);
+	result[0] = 0;
+	result = ft_tab(result, s, c);
 	return (result);
 }

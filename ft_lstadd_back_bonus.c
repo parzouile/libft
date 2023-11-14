@@ -6,7 +6,7 @@
 /*   By: aschmitt <aschmitt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 18:49:47 by aschmitt          #+#    #+#             */
-/*   Updated: 2023/11/06 18:49:55 by aschmitt         ###   ########.fr       */
+/*   Updated: 2023/11/14 17:30:37 by aschmitt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	if (lst == NULL || new == NULL)
+	if (new == NULL)
 		return ;
 	if (*lst)
 		ft_lstlast(*lst)->next = new;

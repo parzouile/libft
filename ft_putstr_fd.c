@@ -6,7 +6,7 @@
 /*   By: aschmitt <aschmitt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 15:18:41 by aschmitt          #+#    #+#             */
-/*   Updated: 2023/11/06 15:18:52 by aschmitt         ###   ########.fr       */
+/*   Updated: 2023/11/14 17:48:46 by aschmitt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_putstr_fd(char *s, int fd)
 {
 	size_t	i;
 
+	if (!s)
+		return ;
 	i = -1;
 	while (s[++i])
 		ft_putchar_fd(s[i], fd);
