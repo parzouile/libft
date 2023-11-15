@@ -6,7 +6,7 @@
 /*   By: aschmitt <aschmitt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 18:52:01 by aschmitt          #+#    #+#             */
-/*   Updated: 2023/11/14 17:11:43 by aschmitt         ###   ########.fr       */
+/*   Updated: 2023/11/15 15:43:26 by aschmitt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*new_list;
 	t_list	*node;
 	void	*new_content;
-	
+
 	if (lst == NULL || f == NULL || del == NULL)
 		return (NULL);
 	new_list = NULL;
